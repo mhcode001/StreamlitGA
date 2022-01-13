@@ -51,7 +51,7 @@ if section == 'Data Explorer':
                                                               'reserve_visitors'])
   
     chart_type = st.sidebar.selectbox("Choose Your Chart Type",
-                                       ['line','bar'])
+                                       ['line','bar','area'])
     # st.line_chart(grouping)
     
     if chart_type == 'line':
@@ -64,7 +64,7 @@ if section == 'Data Explorer':
         
     elif chart_type == 'area':
         fig = px.strip(df[[x_axis, y_axis]], x=x_axis, y=y_axis)
-        st.plotly_chart_fig
+        st.plotly_chart(fig)
         
     st.write(df)
     
